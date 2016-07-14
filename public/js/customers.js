@@ -84,7 +84,7 @@ var testPhone = /\d{10}/;
 				});
 				this.newCustomer = {xid:'',name:'',address:'',phone:''};
 				setTimeout(function (){
-						//window.location.href = '/customers';
+						window.location.href = '/customers';
 				},1000);
 
 			},
