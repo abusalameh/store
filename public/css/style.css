@@ -1,0 +1,109 @@
+@font-face{
+font-family:'jazeera';
+src:url('fonts/jazeera.eot');
+src:local('الجزيرة'),local('jazeera'),
+url('fonts/jazeera.woff') format('woff');
+}
+
+
+
+
+.ltr-font {
+    font-family: 'RobotoDraft', sans-serif;
+}
+
+.rtl-font {
+    font-family: jazeera;
+}
+.font-sm{
+    font-size: 15px;
+}
+.th-ltr {
+  text-align: left;
+}
+.th-rtl {
+  text-align: right;
+}
+
+.btn-floating {
+    width: 32px;
+    height: 32px;
+    padding: 2px;
+    border-radius: 50%;
+    border: 0;
+    font-size: 18px;
+    -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+}
+.pull-left{
+	float:left;
+}
+.page-header{
+    background-color: #009587;
+}
+
+[v-cloak] {
+  display: none;
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(fonts/MaterialIcons-Regular.woff2) format('woff2'),
+       url(fonts/MaterialIcons-Regular.woff) format('woff'),
+       url(fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 28px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;;
+  /*position: relative;
+  top:6px;*/
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+::-webkit-input-placeholder {
+   color: #009587;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #009587;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #009587;
+}
+
+:-ms-input-placeholder {
+   color: #009587;
+}
+th {
+  background-color: #009587;
+  color: white;
+}
+.material-icons.md-14 { font-size: 14px; }
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
