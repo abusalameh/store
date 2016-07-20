@@ -1,9 +1,11 @@
 <?php
 
-use App\Customer;
 use App\Category;
-use App\Product;
+use App\Customer;
+use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\ProductsController;
+use App\Product;
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -32,6 +34,7 @@ Route::resource('products', 'ProductsController');
 Route::resource('invoices', 'InvoicesController');
 Route::get('customer/{id}/invoice/create','InvoicesController@newCustomerInvoice');
 Route::post('customer/{id}/invoice/store','CustomersController@storeInvoice');
+Route::post('customer/payment/store','CustomersController@storePayment');
 // Route::get('yousef', function () {
 //
 //     \DB::connection()->enableQueryLog();

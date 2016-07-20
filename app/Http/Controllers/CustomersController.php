@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Customer;
-use App\Product;
 use App\Http\Requests;
-use JavaScript;
 use App\Invoice;
-use Carbon\Carbon;
 use App\InvoiceItem;
+use App\Payment;
+use App\Product;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use JavaScript;
 class CustomersController extends Controller
 {
     /**
@@ -164,6 +165,36 @@ class CustomersController extends Controller
                 'message' =>  trans('lang.addSuccess')
             ];
 
+    }
+
+    public function storePayment(Request $request)
+    {   
+        $payment_date = Carbon::createFromFormat('m/d/Y', $request->data["date"])->toDateTimeString();
+        $due_to = ($request->data["due_to"] != null) ? Carbon::createFromFormat('m/d/Y', $request->data["due_to"])->toDateTimeString() : null;
+
+        $payment = new Payment();
+        $payment->payment_method = $request->data["payment_method"];
+        $payment->due_to = $due_to;
+        $payment->created_at = $payment_date;
+        $payment->amount = $request->data["amount"];
+        $payment->customer_id = $request->data["customer_id"];
+        $payment->invoice_id = $request->data["invoice_id"];
+        $payment->save();
+
+
+        $invoice = Invoice::findOrFail($payment->invoice_id);
+        if ($invoice->_total != 0){
+            $invoice->_total -= $payment->amount;
+            if ($invoice->_total == 0){
+                $invoice->status = 1;
+            }
+            $invoice->save();
+        }
+
+        return [
+            "title" => trans('lang.operationSuccess'),
+            "message" => trans('lang.addSuccess'),
+        ];
     }
 
     /**

@@ -293,7 +293,21 @@ var testPhone = /\d{10}/;
 			 * Cancel Payment 
 			 */
 			 savePayment: function () {
-			 	
+			 	var obj = {
+			 		payment_method : this.payment.paymentMethod,
+			 		amount		   : this.payment.amount,
+			 		customer_id    : this.newCustomer.id,
+			 		due_to	       : (this.payment.paymentMethod == "check") ? this.payment.due_to : null,
+			 		date     : this.payment.date,
+			 		invoice_id     : this.newCustomer.invoices[this.payment.selectedInvoice].id,
+			 	};
+			 	this.$http.post('/customer/payment/store',{data: obj}, function(data){
+			 		toastr.success(data.message,data.title);
+			 	});
+			 	this.cancelPayment();
+			 	setTimeout(function (){
+					window.location.href = '/customers/'+obj.customer_id;
+				},1500);
 			 },
 			convertDate: function(date){
 				// MM/DD/YYYY
