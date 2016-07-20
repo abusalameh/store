@@ -170,7 +170,7 @@ class CustomersController extends Controller
     public function storePayment(Request $request)
     {   
         $payment_date = Carbon::createFromFormat('m/d/Y', $request->data["date"])->toDateTimeString();
-        $due_to = ($request->data["due_to"] != null) ? Carbon::createFromFormat('m/d/Y', $request->data["due_to"])->toDateTimeString() : "0000-00-00 00:00:00";
+        $due_to = Carbon::createFromFormat('m/d/Y', $request->data["due_to"])->toDateTimeString();
 
         $invoice = Invoice::findOrFail($request->data["invoice_id"]);
         if ($invoice->_total > 0){
