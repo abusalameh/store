@@ -77,6 +77,10 @@ var testPhone = /\d{10}/;
 				console.log(this.newCustomer);
 			},
 			// Customers
+
+			/*
+			 * Create new customer
+			 */
 			addCustomer: function () {
 				var customer = this.newCustomer;
 				this.$http.post('/customers', customer).success(function(data){
@@ -86,13 +90,20 @@ var testPhone = /\d{10}/;
 				setTimeout(function (){
 						window.location.href = '/customers';
 				},1000);
-
 			},
+
+			/*
+			 * Fetch all customers from database
+			 */
 			fetchCustomers: function(){
 				this.$http.get('/api/customers', function (data){
 					this.$set('customers',data);
 				});
 			},
+
+			/*
+			 * Update selected customer
+			 */
 			updateCustomer: function(customer){
 				this.$http.patch('/customers/'+customer.id,this.newCustomer).success(function(data){
 					toastr.success(data.message,data.title);
@@ -101,6 +112,10 @@ var testPhone = /\d{10}/;
 						window.location.href = '/customers';
 				},1000);
 			},
+
+			/*
+			 * Delete selected customer
+			 */
 			deleteCustomer: function(customer){
 				var ok = confirm("هل تريد إتمام عملية الحذف ؟\nمع العلم أنك لن تتمكن من أسترداد البيانات إن قمت بالضغط على زر موافق");
 
@@ -118,6 +133,9 @@ var testPhone = /\d{10}/;
 			},
 			// Invoices
 
+			/*
+			 * Add new item to invoice items list
+			 */
 			addNewItem: function(){
 				var item = {
 					name:'',
@@ -132,6 +150,10 @@ var testPhone = /\d{10}/;
 				this.invoice.items.push(item);
 
 			},
+
+			/*
+			 * Delete an item from invoice items list
+			 */
 			deleteItem: function(index){
 
 					var product = this.invoice.items[index];
@@ -159,12 +181,12 @@ var testPhone = /\d{10}/;
 						}
 					}
 					}
-					// console.log(kk);
-					// this.products.push(ll);
 				},
-			handleMaxQuantity: function(index, maxQty, itemQty){
-				console.log(index);
 
+			/*
+			 * Handle maximum quantaity entered by the user 
+			 */
+			handleMaxQuantity: function(index, maxQty, itemQty){
 				if (itemQty > maxQty){
 					title = "خطأ";
 					message = "لقد تجاوزت الكمية المتوفرة لديك في المخزون وهي ("+ maxQty+ ") ، عذراً";
@@ -174,6 +196,10 @@ var testPhone = /\d{10}/;
 					return maxQty;
 				}
 			},
+
+			/*
+			 * Store invoice to database 
+			 */
 			saveInvoice: function(id){
 				var invoice = this.invoice;
 				invoice.customer_id = this.newCustomer.id;
@@ -207,11 +233,10 @@ var testPhone = /\d{10}/;
 					window.location.href = '/customers/'+ self.newCustomer.id;
 				});
 			},
-			convertDate: function(date){
-				// MM/DD/YYYY
-					date = this.date.getMonth() + "/" + this.date.getTime() + "/" + this.date.getFullYear();
-					return date;
-			},
+
+			/*
+			 * Empty Invoice - Cancel invoice 
+			 */
 			cancelItems: function(){
 					this.invoice.items = [
 						{
@@ -228,7 +253,59 @@ var testPhone = /\d{10}/;
 					];
 					this.selectedProducts = [];
 			},
+
+			// Payments 
+
+			/*
+			 * Handle maximum payment entered by the user 
+			 */
+			handleMaxPayment: function(invoiceIndex){
+				var remaningMoney = this.newCustomer.invoices[invoiceIndex]._total;
+				console.log(invoiceIndex);
+				if (this.payment.amount > remaningMoney){
+					title = "خطأ";
+					message = "عذراً لقد قمت بإدخال مبلغ أكبر من المبلغ المتبقي من الفاتورة.";
+					type = "error";
+					alert(title, message, type);
+					this.payment.amount = remaningMoney;
+					return;
+				}
+				
+			},
+
+			/*
+			 * Cancel Payment 
+			 */
+			 cancelPayment: function(){
+			 	this.payment = {
+					date:"",
+					due_to: "",
+					amount:0.0,
+					selectedInvoice: "",
+					paymentMethod: "",
+			 	};
+			 	this.paymentMethod = "";
+				this.due_to = "";
+				this.selectedInvoice = "";
+			 },
+
+			/*
+			 * Cancel Payment 
+			 */
+			 savePayment: function () {
+			 	
+			 },
+			convertDate: function(date){
+				// MM/DD/YYYY
+					date = this.date.getMonth() + "/" + this.date.getTime() + "/" + this.date.getFullYear();
+					return date;
+			},
+			
 			// Products
+
+			/*
+			 * Fetch selected product information in invoice 
+			 */
 			productInfo: function(id,index){
 				var product;
 				for (var i = 0 ; i < this.products.length ; ++i){
@@ -252,9 +329,17 @@ var testPhone = /\d{10}/;
 
 
 			},
+
+			/*
+			 * Assign products to ProductList 
+			 */
 			productList: function(){
 				return this.products;
 			},
+
+			/*
+			 * Fetch products from database 
+			 */
 			fetchProducts: function(){
 	            this.$http.get('/api/products/' , function(data){
 	                this.$set('products',data);

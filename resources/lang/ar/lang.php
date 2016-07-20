@@ -86,6 +86,7 @@ return [
     'totalPaid' => 'المبلغ المدفوع',
     'remaining' => 'المبلغ المتبقي',
     'paymentDuo' => 'تاريخ الإستحقاق',
+    "payment_value" => "قيمة الدفعة",
     // Checks
     'Checksh' => 'الشيكات <i class="material-icons">note</i>',
     'Checks' => 'الشيكات',
