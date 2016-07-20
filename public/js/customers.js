@@ -298,7 +298,7 @@ var testPhone = /\d{10}/;
 			 		amount		   : this.payment.amount,
 			 		customer_id    : this.newCustomer.id,
 			 		due_to	       : (this.payment.paymentMethod == "check") ? this.payment.due_to : null,
-			 		date     : this.payment.date,
+			 		date     	   : this.payment.date,
 			 		invoice_id     : this.newCustomer.invoices[this.payment.selectedInvoice].id,
 			 	};
 			 	this.$http.post('/customer/payment/store',{data: obj}, function(data){

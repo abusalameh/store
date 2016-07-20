@@ -170,26 +170,26 @@ class CustomersController extends Controller
     public function storePayment(Request $request)
     {   
         $payment_date = Carbon::createFromFormat('m/d/Y', $request->data["date"])->toDateTimeString();
-        $due_to = ($request->data["due_to"] != null) ? Carbon::createFromFormat('m/d/Y', $request->data["due_to"])->toDateTimeString() : null;
+        $due_to = ($request->data["due_to"] != null) ? Carbon::createFromFormat('m/d/Y', $request->data["due_to"])->toDateTimeString() : "0000-00-00 00:00:00";
 
-        $payment = new Payment();
-        $payment->payment_method = $request->data["payment_method"];
-        $payment->due_to = $due_to;
-        $payment->created_at = $payment_date;
-        $payment->amount = $request->data["amount"];
-        $payment->customer_id = $request->data["customer_id"];
-        $payment->invoice_id = $request->data["invoice_id"];
-        $payment->save();
-
-
-        $invoice = Invoice::findOrFail($payment->invoice_id);
-        if ($invoice->_total != 0){
-            $invoice->_total -= $payment->amount;
+        $invoice = Invoice::findOrFail($request->data["invoice_id"]);
+        if ($invoice->_total > 0){
+            $invoice->_total -= $request->data["amount"];
             if ($invoice->_total == 0){
                 $invoice->status = 1;
             }
             $invoice->save();
-        }
+
+            $payment = new Payment();
+            $payment->payment_method = $request->data["payment_method"];
+            $payment->due_to = $due_to;
+            $payment->created_at = $payment_date;
+            $payment->amount = $request->data["amount"];
+            $payment->customer_id = $request->data["customer_id"];
+            $payment->invoice_id = $request->data["invoice_id"];
+            $payment->save();
+        } 
+
 
         return [
             "title" => trans('lang.operationSuccess'),
