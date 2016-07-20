@@ -260,8 +260,8 @@ var testPhone = /\d{10}/;
 			 * Handle maximum payment entered by the user 
 			 */
 			handleMaxPayment: function(invoiceIndex){
-				var remaningMoney = this.newCustomer.invoices[invoiceIndex]._total;
-				console.log(invoiceIndex);
+				var remaningMoney = Number(this.newCustomer.invoices[invoiceIndex]._total);
+
 				if (this.payment.amount > remaningMoney){
 					title = "خطأ";
 					message = "عذراً لقد قمت بإدخال مبلغ أكبر من المبلغ المتبقي من الفاتورة.";
