@@ -305,9 +305,9 @@ var testPhone = /\d{10}/;
 			 		toastr.success(data.message,data.title);
 			 	});
 			 	this.cancelPayment();
-			 	setTimeout(function (){
-					window.location.href = '/customers/'+obj.customer_id;
-				},1500);
+			 // 	setTimeout(function (){
+				// 	window.location.href = '/customers/'+obj.customer_id;
+				// },1500);
 			 },
 			convertDate: function(date){
 				// MM/DD/YYYY
