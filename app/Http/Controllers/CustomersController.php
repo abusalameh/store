@@ -171,7 +171,6 @@ class CustomersController extends Controller
     {   
         $payment_date = Carbon::createFromFormat('m/d/Y', $request->data["date"])->toDateTimeString();
         $due_to = Carbon::createFromFormat('m/d/Y', $request->data["due_to"])->toDateTimeString();
-        dd($due_to);
         $invoice = Invoice::findOrFail($request->data["invoice_id"]);
         if ($invoice->_total > 0){
             $invoice->_total -= $request->data["amount"];

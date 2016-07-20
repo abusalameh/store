@@ -297,7 +297,8 @@ var testPhone = /\d{10}/;
 			 		payment_method : this.payment.paymentMethod,
 			 		amount		   : this.payment.amount,
 			 		customer_id    : this.newCustomer.id,
-			 		due_to	       : (this.payment.paymentMethod == "check") ? this.payment.due_to : "00/00/0000",
+			 		// due_to	       : (this.payment.paymentMethod == "check") ? this.payment.due_to : "00/00/0000",
+			 		due_to	       : this.payment.due_to,
 			 		date     	   : this.payment.date,
 			 		invoice_id     : this.newCustomer.invoices[this.payment.selectedInvoice].id,
 			 	};
