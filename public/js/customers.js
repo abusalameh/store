@@ -162,7 +162,9 @@ var testPhone = /\d{10}/;
 						message = "لا يمكنك حذف هذا المُدخل ";
 						type = "error";
 						alert(title, message, type);
-						return false;
+					} else if (index > 0 && product.name ===""){
+						this.invoice.items.splice(index,1);
+						return;
 					}
 					var self = this;
 					var ll = this.allProducts.filter(function(product) {
