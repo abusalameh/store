@@ -150,4 +150,12 @@ return [
     'updateSuccess' => 'تمت عملية التعديل بنجاح',
     'deleteSuccess' => 'تمت عملية الحذف بنجاح',
     'deleteFailed' => 'فشلت عملية الحذف',
+
+    // Login
+    'login' => 'تسجيل الدخول',
+    'username' => 'اسم المستخدم',
+    'password' => 'كلمة المرور',
+    'Login to Dashboard' => 'تسجيل الدخول للبرنامج',
+    'login success' => 'تمت عملية تسجيل الدخول بنجاح',
+    
 ];

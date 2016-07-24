@@ -13754,7 +13754,7 @@ pre .hljs {
   margin: 0;
 }
 .bg-lock-screen .bg-blur:before {
-  background: url('../../globals/img/picjumbo/large/29.jpg') fixed no-repeat;
+  background: url('../../globals/img/picjumbo/large/30.jpg') fixed no-repeat;
   background-size: cover;
 }
 .bg-lock-screen .lock-screen {
@@ -13815,7 +13815,7 @@ pre .hljs {
   margin: 0;
 }
 .bg-login .bg-blur:before {
-  background: url('../../globals/img/picjumbo/large/29.jpg') fixed no-repeat;
+  background: url('../../globals/img/picjumbo/large/30.jpg') fixed no-repeat;
   background-size: cover;
 }
 .bg-login .login-screen {
@@ -14037,11 +14037,11 @@ pre .hljs {
           transition: all 1s;
 }
 .bg-blur.active:before {
-  filter: blur(10px);
-  -webkit-filter: blur(10px);
-  -moz-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
 }
 .bg-blur .blur-content {
   position: relative;
