@@ -118,7 +118,7 @@ var testPhone = /\d{10}/;
 			 */
 			deleteCustomer: function(customer){
 				var ok = confirm("هل تريد إتمام عملية الحذف ؟\nمع العلم أنك لن تتمكن من أسترداد البيانات إن قمت بالضغط على زر موافق");
-
+				return;
 				if (ok){
 					this.$http.delete('/customers/'+customer.id).success(function(data){
 						toastr.success(data.message,data.title);
