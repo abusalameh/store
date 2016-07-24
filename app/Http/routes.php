@@ -42,7 +42,9 @@ use App\Product;
 
     });  
     Route::group(['middleware' => ['web','auth']], function(){
-
+        Route::get('/',function(){ 
+            return redirect('/customers'); 
+        });
         Route::resource('categories', 'CategoriesController');
         Route::resource('customers', 'CustomersController');
         Route::resource('products', 'ProductsController');
