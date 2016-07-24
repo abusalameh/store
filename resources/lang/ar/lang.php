@@ -158,5 +158,11 @@ return [
     'Login to Dashboard' => 'تسجيل الدخول للبرنامج',
     'login success' => 'تمت عملية تسجيل الدخول بنجاح',
     'logout' => 'تسجيل الخروج <i class="material-icons">power_settings_new</i>',
+
+
+    // copyright
+
+    'copyright' => 'ⓒ ميثاق | جميع الحقوق محفوظة ',
+    'dev' => 'برمجة وتطوير : رجا أبو سلامة',
     
 ];

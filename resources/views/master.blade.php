@@ -95,13 +95,7 @@
 				@yield('content')
 		<!-- content -->
 
-		{{-- <div class="footer margin-top-40">
-			<div class="row no-gutters">
-				<div class="col-xs-12 bg-teal">
-					<span class="{{ trans('lang.direction') }}-font">جميع الحقوق محفوظة</span>
-				</div><!--.col-->
-			</div><!--.row-->
-		</div><!--.footer-links--> --}}
+		
 
 	</div><!--.content-->
 
@@ -115,15 +109,18 @@
 
 
 	</div><!--.layer-container-->
-	{{-- <footer style="background-color:#009587;height:90px;color:white;padding-bottom:0px;padding-top:30px" >
-		<div class="row" >
-			<div class="col-md-12" >
-				<p class="text-lead text-center">
-					all right reserved
-				</p>
-			</div>
-		</div>
-	</footer> --}}
+	
+	<div class="footer-links margin-top-40 fixed-footer">
+			<div class="row ">
+				<div class="col-xs-12 col-md-12 col-sm-12 bg-teal" style="color:white;">
+					<br>
+					<span class="{{trans('lang.direction')}}-font text-center"> {{ trans('lang.copyright')}} </span>
+					<span class="{{trans('lang.direction')}}-font text-center"> {{ trans('lang.dev')}} </span>
+					<br>
+				</div><!--.col-->
+				<br>
+			</div><!--.row-->
+		</div><!--.footer-links-->
 	<!-- BEGIN GLOBAL AND THEME VENDORS -->
 	<script src="{{ asset('globals/js/global-vendors.js') }}"></script>
 	<!-- END GLOBAL AND THEME VENDORS -->
