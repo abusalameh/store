@@ -138,4 +138,12 @@ return [
     'deleteSuccess' => 'Deleted Successfully!',
     'deleteFailed' => 'Delete Failed!',
 
+
+    'login' => 'Login',
+    'username' => 'Username',
+    'password' => 'Password',
+    'Login to Dashboard' => 'Login to Dashboard',
+    'login success' => 'You\'ve Successfully Logged in',
+    'logout' => '<i class="material-icons">power_settings_new</i> Logout',
+
 ];

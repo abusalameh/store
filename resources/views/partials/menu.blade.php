@@ -17,6 +17,7 @@
 	<li>
 		<a href="/products" class="{!! trans('lang.direction') !!}-font">{!! trans('lang.products') !!}</a>
 	</li>
+	
 	<!-- <li>
 		<a href="javascript:;" class="{!! trans('lang.direction') !!}-font">{!! trans('lang.inventory') !!}</a>
 	</li> -->
@@ -32,7 +33,11 @@
 			</li>
 		</ul>
 	</li>
+	<li>
+		<a href="{{ url('logout')}}" class="{!! trans('lang.direction') !!}-font">{!! trans('lang.logout') !!}</a>
+</li>
 </ul>
+
 
 <!-- <ul class="child-menu">
 	<li>

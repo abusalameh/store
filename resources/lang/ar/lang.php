@@ -157,5 +157,6 @@ return [
     'password' => 'كلمة المرور',
     'Login to Dashboard' => 'تسجيل الدخول للبرنامج',
     'login success' => 'تمت عملية تسجيل الدخول بنجاح',
+    'logout' => 'تسجيل الخروج <i class="material-icons">power_settings_new</i>',
     
 ];
