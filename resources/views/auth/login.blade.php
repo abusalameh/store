@@ -68,12 +68,16 @@
                 </div><!--#login.panel-body-->
             </div><!--.blur-content-->
             @if ($errors->has('username'))
-                            
-            <div class="alert alert-danger">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <strong>{{ $errors->first('username') }}</strong>
-            </div>
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>{{ $errors->first('username') }}</strong>
+                </div>
             @endif
+
+            <div class="alert alert-info">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>{{trans('lang.username')}}: admin | {{ trans('lang.password') }}: password</strong>
+            </div>
         </div><!--.login-screen-->
     </form>
     <div class="bg-blur dark">
