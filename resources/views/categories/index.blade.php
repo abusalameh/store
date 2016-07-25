@@ -8,7 +8,7 @@
 	<h1 class="{{ trans('lang.direction') }}-font text-{{trans('lang.page-direction')}}" > {!! trans('lang.categoriesh') !!}</h1>
 @stop
 @section('content')
-	<div id="categories">
+	<div class="content" id="categories">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel">
@@ -24,12 +24,13 @@
 							<div class="pull-{{trans('lang.page-direction')}} search ">
 								<div class="form-group">
 									<div class="col-md-12">
-										<div class="col-md-3 pull-{{trans('lang.page-direction')}} text-teal"><label><i class="material-icons">search</i></label></div>
+										<div class="col-md-3 pull-{{trans('lang.page-direction')}} text-teal hidden-sm hidden-xs"><label><i class="material-icons">search</i></label></div>
 										<div class="col-md-9">
 											<input class="form-control text-{{trans('lang.page-direction')}} text-teal" dir="{{ trans('lang.direction') }}" type="text" placeholder="{{ trans('lang.search') }}" v-model='query'>
 										</div>
 									</div>
 								</div>
+							</div>
 							</div>
 							<div class="col-md-1 pull-{{trans('lang.!page-direction')}} ">
 								<select name="" id="" v-model="limit" class="form-control input-sm">
@@ -46,7 +47,7 @@
 									{!! trans('lang.addCategory') !!}
 								</a>
 							</div>
-
+						
 						<table class="table table-hover" dir="{{ trans('lang.direction') }}">
 							<thead>
 								<tr>

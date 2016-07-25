@@ -7,7 +7,7 @@
     <h1 class="{{ trans('lang.direction') }}-font text-{{trans('lang.page-direction')}} pull-{{ trans('lang.page-direction')}}"> {!! trans('lang.addProducth') !!}</h1>
 @endsection
 @section('content')
-    <div id="products">
+    <div id="products" class="content">
         <div class="row">
           <div class="col-md-12">
               <div class="panel">
@@ -37,7 +37,7 @@
                                   </div>
                               </div>
                           </form>
-                    </validator>
+                      </validator>
                   </div><!--.panel-body-->
               </div><!--.panel-->
           </div><!--.col-md-12-->

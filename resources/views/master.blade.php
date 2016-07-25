@@ -96,16 +96,16 @@
 		<!-- content -->
 
 		
-		<div class="footer-links margin-top-40">
+		{{-- <div class="footer-links"> --}}
 			<div class="row no-gutters">
-				<div class="col-xs-12 bg-teal" style="color:white;">
-					<span class="{{trans('lang.direction')}}-font text-center"> {{ trans('lang.copyright')}} </span>
-					<span class="{{trans('lang.direction')}}-font text-center"> {{ trans('lang.dev')}} </span>
+				<div class="col-xs-12 bg-teal" style="color:white;padding-top:30px">
+					<span class="{{trans('lang.direction')}}-font text-center" style="font-size:12px"> {{ trans('lang.copyright')}} </span>
+					<span class="{{trans('lang.direction')}}-font text-center" style="font-size:12px"> {{ trans('lang.dev')}} </span>
 					<br>
 				</div><!--.col-->
 				<br>
 			</div><!--.row-->
-		</div><!--.footer-links-->
+		{{-- </div>.footer-links --}}
 	</div><!--.content-->
 
 	<div class="layer-container">
