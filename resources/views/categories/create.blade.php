@@ -17,10 +17,15 @@
                              {!! trans('lang.addCategory') !!}
                           </h4>
                       </div>
+                      <div class="panel-title pull-{{trans('lang.!page-direction')}}" dir={{ trans('language.direction') }}>
+                          <div class="checkboxer text-{{trans('lang.page-direction')}}" >
+                              <input type="checkbox" value="" id="check1" v-model="anotherCategory" >
+                              <label for="check1"> {{ trans('lang.anotherCategory')}} </label>  
+                          </div>
+                      </div>
                   </div><!--.panel-heading-->
                   <div class="panel-body">
                       <form class="form-horizontal" method="post" @prevent.submit>
-                          {{ csrf_token() }}
                           @include('categories.form')
                           <div class="form-buttons">
                               <div class="row">

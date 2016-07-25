@@ -17,13 +17,19 @@
                              {!! trans('lang.addCustomer') !!}
                           </h4>
                       </div>
+                      <div class="panel-title pull-{{trans('lang.!page-direction')}}" dir={{ trans('language.direction') }}>
+                          <div class="checkboxer text-{{trans('lang.page-direction')}}" >
+                              <input type="checkbox" value="" id="check1" v-model="anotherCustomer" >
+                              <label for="check1"> {{ trans('lang.anotherCustomer')}} </label>  
+                          </div>
+                      </div>
                   </div><!--.panel-heading-->
                   <div class="panel-body">
                       <form class="form-horizontal" method="post" @prevent.submit>
                           @include('partials.customer.form')
                           <div class="form-buttons">
                               <div class="row">
-                                  <div class="col-md-offset-3 col-md-9 ">
+                                  <div class="col-md-offset-3 col-md-6 ">
                                       <button class="btn btn-teal pull-{{trans('lang.page-direction')}} {{trans('lang.direction')}}-font" type="submit" :disabled="!isValid" @click="addCustomer"> {{ trans('lang.save') }}</button>
                                       <a href="{{ route('customers.index') }}" class="btn btn-flat btn-default pull-{{trans('lang.page-direction')}} {{trans('lang.direction')}}-font" >{{ trans('lang.cancel') }}</a>
                                   </div>

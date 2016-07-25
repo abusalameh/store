@@ -17,6 +17,12 @@
                              {!! trans('lang.addProduct') !!}
                           </h4>
                       </div>
+                      <div class="panel-title pull-{{trans('lang.!page-direction')}}" dir={{ trans('language.direction') }}>
+                          <div class="checkboxer text-{{trans('lang.page-direction')}}" >
+                              <input type="checkbox" value="" id="check1" v-model="anotherProduct" >
+                              <label for="check1"> {{ trans('lang.anotherProduct')}} </label>  
+                          </div>
+                      </div>
                   </div><!--.panel-heading-->
                   <div class="panel-body">
                       <validator name="product">

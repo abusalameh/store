@@ -12,6 +12,7 @@ new Vue({
 		limit:10,
 		categories: [],
         newCategory: {name:'',description:''},
+        anotherCategory:'',
     },
     methods: {
         fetchCategories: function (){
@@ -29,9 +30,13 @@ new Vue({
             // Clear Input
             this.newCategory = {name:'',description:''};
             // Redirect to index
-            setTimeout(function (){
-                    window.location.href = '/categories';
-            },1000);
+            if (!this.anotherCategory){
+                setTimeout(function (){
+                        window.location.href = '/categories';
+                },1000);
+            } else {
+                return;
+            }
         },
         updateCategory: function(category){
             this.$http.patch('/categories/'+category.id,this.newCategory).success(function(data){

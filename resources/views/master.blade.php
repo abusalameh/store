@@ -13,7 +13,7 @@
 	<meta name="author" content="">
 	<meta name="token" id="token" value="{{csrf_token()}}">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scale=0">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -96,24 +96,9 @@
 		<!-- content -->
 
 		
-
-	</div><!--.content-->
-
-	<div class="layer-container">
-
-		<!-- BEGIN MENU LAYER -->
-		<div class="menu-layer">
-			@include('partials.menu')
-		</div><!--.menu-layer-->
-		<!-- END OF MENU LAYER -->
-
-
-	</div><!--.layer-container-->
-	
-	<div class="footer-links margin-top-40 fixed-footer">
-			<div class="row ">
-				<div class="col-xs-12 col-md-12 col-sm-12 bg-teal" style="color:white;">
-					<br>
+		<div class="footer-links margin-top-40">
+			<div class="row no-gutters">
+				<div class="col-xs-12 bg-teal" style="color:white;">
 					<span class="{{trans('lang.direction')}}-font text-center"> {{ trans('lang.copyright')}} </span>
 					<span class="{{trans('lang.direction')}}-font text-center"> {{ trans('lang.dev')}} </span>
 					<br>
@@ -121,6 +106,17 @@
 				<br>
 			</div><!--.row-->
 		</div><!--.footer-links-->
+	</div><!--.content-->
+
+	<div class="layer-container">
+		<!-- BEGIN MENU LAYER -->
+		<div class="menu-layer">
+			@include('partials.menu')
+		</div><!--.menu-layer-->
+		<!-- END OF MENU LAYER -->
+	</div><!--.layer-container-->
+	
+
 	<!-- BEGIN GLOBAL AND THEME VENDORS -->
 	<script src="{{ asset('globals/js/global-vendors.js') }}"></script>
 	<!-- END GLOBAL AND THEME VENDORS -->

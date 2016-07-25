@@ -41,6 +41,7 @@ var testPhone = /\d{10}/;
 			payments:[],
 			balance:[],
 		},
+		anotherCustomer:false,
 		countDisabled:0,
 		products: [],
 		allProducts: [],
@@ -87,9 +88,15 @@ var testPhone = /\d{10}/;
 					toastr.success(data.message,data.title);
 				});
 				this.newCustomer = {xid:'',name:'',address:'',phone:''};
-				setTimeout(function (){
-						window.location.href = '/customers';
-				},1000);
+				if (!this.anotherCustomer){
+						setTimeout(function (){
+							window.location.href = '/customers';
+					},1000);
+				} else {
+					return;
+				}
+
+
 			},
 
 			/*
@@ -221,7 +228,7 @@ var testPhone = /\d{10}/;
 						 title ="هنالك خطأ";
 						 type = "error";
 						alert(title, message, type);
-						alert("هذا المنتج نفذ من المخزون", "لا يمكنك أنشاء هذه الفاتورة وذلك لأن المنتج - " + invoice.items[i].name +  " - قد إنتهى من المخزون " , "error");
+						// alert("هذا المنتج نفذ من المخزون", "لا يمكنك أنشاء هذه الفاتورة وذلك لأن المنتج - " + invoice.items[i].name +  " - قد إنتهى من المخزون " , "error");
 						return false;
 					}
 					if (invoice.items[i].productId === ""){
@@ -229,6 +236,21 @@ var testPhone = /\d{10}/;
 						return false;
 					}
 				}
+
+				// check for duplication or disabled items 
+				var items = invoice.items;
+					for(i = 0 ; i < items.length ; ++i){
+						for (var j = i+1 ; j < items.length ; ++j) {
+							if (items[i].productId == items[j].productId || items[i].maxQty == 0 || items[j].maxQty == 0){
+								message = "أنت تقوم بإنشاء فاتورة بطريقة غير شرعية ,, يرجى تحديث الصفحة وعدم العبث ومحاولة الإختراق";
+								title ="هنالك خطأ";
+								type = "error";
+								alert(title, message, type);
+								return;
+							}
+						}
+					}
+
 				var self = this;
 				this.$http.post('/customer/'+id+'/invoice/store', {"data":invoice}).success(function(data){
 					toastr.success(data.message,data.title);

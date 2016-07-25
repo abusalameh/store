@@ -20,7 +20,7 @@
 						</div><!--.panel-title-->
 					</div><!--.panel-heading-->
 					<div class="panel-body">
-
+					
 						<div class="invoice">
 							<div class="invoice-heading" dir="{{trans('lang.direction')}}">
 								<div class="row date-row">
@@ -39,7 +39,7 @@
 								<table class="table table-hover text-{{trans('lang.page-direction')}}" dir="{{ trans('lang.direction')}}">
 									<thead>
 										<tr>
-											<th></th>
+											<th class="hidden-xs hidden-sm"></th>
 											<th class="text-{{trans('lang.page-direction')}}"> {{ trans('lang.product')}}</th>
 											<th class="text-{{trans('lang.page-direction')}}">{{ trans('lang.quantity')}}</th>
 											<th class="text-{{trans('lang.page-direction')}}">{{ trans('lang.price')}}</th>
@@ -48,7 +48,7 @@
 									</thead>
 									<tbody>
 										<tr v-for="item in items">
-											<td>@{{ $index + 1 }}</td>
+											<td class="hidden-xs hidden-sm">@{{ $index + 1 }}</td>
 											<td class="text-{{trans('lang.page-direction')}}">
 												@{{ item.name }}
 												<small>@{{ item.description}}</small>

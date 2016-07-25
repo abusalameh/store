@@ -22,6 +22,7 @@ var vm = new Vue({
             quantity:'',
             category_id:'',
         },
+        anotherProduct:false,
     },
     methods:{
         log: function (){
@@ -43,9 +44,13 @@ var vm = new Vue({
                 toastr.success(data.message,data.title);
             });
             this.newProduct = { xid:'', name:'', description:'', notes:'', price:'', quantity:'',category_id:''};
-            setTimeout(function (){
-                    window.location.href = '/products';
-            },1000);
+            if (!this.anotherProduct){ 
+                setTimeout(function (){
+                        window.location.href = '/products';
+                },1000);
+            } else {
+                return;
+            }   
 
         },
         updateProduct: function(product){

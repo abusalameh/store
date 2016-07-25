@@ -78,7 +78,7 @@ return [
     'paymentId' => 'رقم الدفعة',
     'addPayment' => 'إضافة دفعة جديدة <i class="material-icons">payment</i>',
     'netBalance' => 'الرصيد <i class="material-icons">attach_money</i>',
-    'totalDebit' => 'إجمالي الديون المتبقية',
+    'totalDebit' => 'الديون المتبقية',
     'totalPayment' => 'إجمالي الدفعات',
     'paymentMethod' => 'طريقة الدفع',
     'check' => 'شيك',
@@ -164,5 +164,8 @@ return [
 
     'copyright' => 'ⓒ ميثاق | جميع الحقوق محفوظة ',
     'dev' => 'برمجة وتطوير : رجا أبو سلامة',
+    'anotherCustomer' => 'اضافة زبون آخر',
+    'anotherProduct' => 'إضافة منتج آخر',
+    'anotherCategory' => 'إضافة صنف آخر',
     
 ];
