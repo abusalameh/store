@@ -8006,20 +8006,20 @@ select[data-style="btn-blue-grey"] + .bootstrap-select li.selected a {
     border: none !important;
     border-bottom: 1px solid #eee !important;
     position: relative !important;
-    padding-left: 50% !important;
+    padding-right: 50% !important;
     white-space: normal !important;
-    text-align: left !important;
+    text-align: right !important;
   }
   .no-more-tables td:before {
     /* Now like a table header */
     position: absolute !important;
     /* Top/left values mimic padding */
     top: 11px;
-    left: 6px;
+    right: 6px;
     width: 45%;
     padding-right: 10px !important;
     white-space: nowrap;
-    text-align: left !important;
+    text-align: right !important;
     font-weight: bold;
   }
   /*
@@ -8029,6 +8029,7 @@ select[data-style="btn-blue-grey"] + .bootstrap-select li.selected a {
     content: attr(data-title);
   }
 }
+
 /*
 11 - Modals
 */
