@@ -1,4 +1,4 @@
-<div class="no-more-tables">
+
     <table class="table table-bordered table-striped table-condensed table-hover" dir="{{ trans('lang.direction') }}">
         <thead>
             <tr>
@@ -13,4 +13,4 @@
             </tr>
         </tbody>
     </table>
-</div>
+
