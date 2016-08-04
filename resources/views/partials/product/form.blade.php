@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="">
-        <div class="form-group" v-bind:class="{ 'has-error': ($product.xid.required || $product.xid.minlength || $product.xid.maxlength) }">
+        <div class="form-group" v-bind:class="{ 'has-error': ($product.xid.required) }">
             <label class="control-label col-md-2 pull-{{trans('lang.page-direction')}} {{trans('lang.direction')}}-font">{{ trans('lang.productId')}}</label>
             <div class="col-md-10">
                 <div class="inputer">
@@ -11,18 +11,16 @@
                                id="xid"
                                class="form-control"
                                v-model="newProduct.xid"
-                               placeholder="{{ trans('lang.productId') }}"
+                               placeholder="مثال : 000001 "
                                dir="{{trans('lang.direction')}}"
-                               v-validate:xid="{ minlength: 3, required: true , maxlength:10}"
+                               v-validate:xid="{ required: true}"
                         >
                     </div>
                     <span class="help-block" v-show="$product.xid.required"><small>{{ trans('lang.field required') }}</small></span>
-                    <span class="help-block" v-show="$product.xid.minlength"><small>{{ trans('lang.min length 3') }}</small></span>
-                    <span class="help-block" v-show="$product.xid.maxlength"><small>{{ trans('lang.max length 10') }}</small></span>
                 </div>
             </div>
         </div><!--.form-group-->
-        <div class="form-group" v-bind:class="{ 'has-error': ($product.name.required || $product.name.minlength) }">
+        <div class="form-group" v-bind:class="{ 'has-error': ($product.name.required ) }">
             <label class="control-label col-md-2 pull-{{trans('lang.page-direction')}} {{trans('lang.direction')}}-font">{{ trans('lang.productName')}}</label>
             <div class="col-md-10">
                 <div class="inputer">
@@ -31,13 +29,12 @@
                                name="name"
                                class="form-control"
                                v-model="newProduct.name"
-                               placeholder="{{ trans('lang.productName') }}"
+                               placeholder="مثال : "
                                dir="{{trans('lang.direction')}}"
-                               v-validate:name="{ minlength: 3, required: true}"
+                               v-validate:name="{ required: true}"
                         >
                     </div>
                     <span class="help-block" v-show="$product.name.required"><small>{{ trans('lang.field required') }}</small></span>
-                    <span class="help-block" v-show="$product.name.minlength"><small>{{ trans('lang.min length 3') }}</small></span>
                 </div>
             </div>
         </div><!--.form-group-->
@@ -50,17 +47,16 @@
                                name="description"
                                class="form-control"
                                v-model="newProduct.description"
-                               placeholder="{{ trans('lang.productDescription') }}"
+                               placeholder=""
                                dir="{{trans('lang.direction')}}"
-                               v-validate:description="{ minlength: 3, required: true}"
+                               v-validate:description="{required: true}"
                         >
                         <span class="help-block" v-show="$product.description.required"><small>{{ trans('lang.field required') }}</small></span>
-                        <span class="help-block" v-show="$product.description.minlength"><small>{{ trans('lang.min length 3') }}</small></span>
                     </div>
                 </div>
             </div>
         </div><!--.form-group-->
-        <div class="form-group" v-bind:class="{ 'has-error': ($product.notes.required || $product.notes.minlength)}">
+        <div class="form-group" v-bind:class="{ 'has-error': ($product.notes.required )}">
             <label class="control-label col-md-2 pull-{{trans('lang.page-direction')}} {{trans('lang.direction')}}-font">{{ trans('lang.productNotes')}}</label>
             <div class="col-md-10">
                 <div class="inputer">
@@ -69,7 +65,7 @@
                                name="notes"
                                class="form-control"
                                v-model="newProduct.notes"
-                               placeholder="{{ trans('lang.productNotes') }}"
+                               placeholder=""
                                dir="{{trans('lang.direction')}}"
                                v-validate:notes="{ minlength: 3, required: true}"
                         >
@@ -90,11 +86,31 @@
                                step="0.5"
                                class="form-control"
                                v-model="newProduct.price"
-                               placeholder="{{ trans('lang.productPrice') }}"
+                               placeholder=""
                                dir="{{trans('lang.direction')}}"
                                v-validate:price="{ required: true}"
                         >
                         <span class="help-block" v-show="$product.price.required"><small>{{ trans('lang.field required') }}</small></span>
+                    </div>
+                </div>
+            </div>
+        </div><!--.form-group-->
+        <div class="form-group" v-bind:class="{ 'has-error': ($product.cost.required )}">
+            <label class="control-label col-md-2 pull-{{trans('lang.page-direction')}} {{trans('lang.direction')}}-font">{{ trans('lang.productCost')}}</label>
+            <div class="col-md-10">
+                <div class="inputer">
+                    <div class="input-wrapper">
+                        <input type="number"
+                               name="cost"
+                               min="1"
+                               step="0.5"
+                               class="form-control"
+                               v-model="newProduct.cost"
+                               placeholder=""
+                               dir="{{trans('lang.direction')}}"
+                               v-validate:cost="{ required: true}"
+                        >
+                        <span class="help-block" v-show="$product.cost.required"><small>{{ trans('lang.field required') }}</small></span>
                     </div>
                 </div>
             </div>
@@ -110,7 +126,7 @@
                                step="0.5"
                                class="form-control"
                                v-model="newProduct.quantity"
-                               placeholder="{{ trans('lang.productQuantity') }}"
+                               placeholder=""
                                dir="{{trans('lang.direction')}}"
                                v-validate:quantity="{ required: true}"
                         >

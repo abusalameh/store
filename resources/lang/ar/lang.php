@@ -15,6 +15,9 @@ return [
     'quantity' => 'الكمية',
     'total' => 'المجموع',
 
+    // Dashboard
+    'dashboard' => 'لوحة التحكم',
+
     // Customer
     'customerId' => 'رقم الزبون',
     'name' => 'الاسم',
@@ -62,6 +65,7 @@ return [
     'productDescription' => 'الوصف',
     'productNotes' => 'ملاحظات',
     'productPrice' => 'السعر',
+    'productCost' => 'سعر التكلفة',
     'productQuantity' => 'الكمية المتوفرة',
     // 'addProduct' => 'إضافة منتج جديد <i class="material-icons md-18">add_circle</i>',
     'addProduct' => 'جديد <i class="material-icons md-18">add_circle</i>',

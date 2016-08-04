@@ -97,7 +97,10 @@
 
 		
 		{{-- <div class="footer-links"> --}}
-			<div class="row no-gutters">
+			
+		{{-- </div>.footer-links --}}
+	</div><!--.content-->
+	<div class="row no-gutters">
 				<div class="col-xs-12 bg-teal" style="color:white;padding-top:30px">
 					<span class="{{trans('lang.direction')}}-font text-center" style="font-size:12px"> {{ trans('lang.copyright')}} </span>
 					<span class="{{trans('lang.direction')}}-font text-center" style="font-size:12px"> {{ trans('lang.dev')}} </span>
@@ -105,8 +108,6 @@
 				</div><!--.col-->
 				<br>
 			</div><!--.row-->
-		{{-- </div>.footer-links --}}
-	</div><!--.content-->
 
 	<div class="layer-container">
 		<!-- BEGIN MENU LAYER -->

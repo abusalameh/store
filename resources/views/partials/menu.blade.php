@@ -1,6 +1,6 @@
 <ul>
 	<li>
-		<a href="#" class="{!! trans('lang.direction') !!}-font">  {!! trans('lang.control panel') !!} </a>
+		<a href="/dashboard" class="{!! trans('lang.direction') !!}-font">  {!! trans('lang.control panel') !!} </a>
 	</li>
 	<li>
 		<a href="/customers" class="{!! trans('lang.direction') !!}-font">{!! trans('lang.customersList') !!}</a>

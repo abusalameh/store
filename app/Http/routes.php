@@ -43,7 +43,10 @@ use App\Product;
     });  
     Route::group(['middleware' => ['web','auth']], function(){
         Route::get('/',function(){ 
-            return redirect('/customers'); 
+            return redirect('/dashboard'); 
+        });
+        Route::get('/dashboard', function(){
+            return view('dashboard');
         });
         Route::resource('categories', 'CategoriesController');
         Route::resource('customers', 'CustomersController');
