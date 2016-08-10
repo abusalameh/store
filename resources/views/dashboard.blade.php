@@ -3,11 +3,88 @@
 @section('page-head-title')
 	{{ trans('lang.dashboard') }}
 @stop
+@section('styles')
+	<style>
+		.card-dashboard-info .card-icon-rtl {
+		  position: absolute;
+		  left: 20px;
+		  top: 20px;
+		  font-size: 30px;
+		  opacity: .2;
+		}
+	</style>
+@stop
 @section('page-title')
 	<h1 class="{{ trans('lang.direction') }}-font text-{{trans('lang.page-direction')}}"> {!! trans('lang.control panel') !!}</h1>
 @stop
 @section('content')
 	<div id="dashboard">
+		<div class="display-animation">
+			<div class="row image-row margin-bottom-40">
+				<div class="col-md-2 col-sm-12 col-xs-12" dir="{{ trans('lang.direction')}}">
+					<div class="card tile card-dashboard-info card-light-blue material-animate material-animated" style="animation-delay: 0.89s;">
+						<div class="card-body">
+							<div class="{{ trans('lang.card-icon') }}"><i class="fa fa-calculator"></i></div><!--.card-icon-->
+							<h4>Open Invoices</h4>
+							<p class="result">26</p>
+							<small>Waiting to send</small>
+						</div>
+					</div><!--.card-->
+				</div>
+				<div class="col-md-2 col-sm-12 col-xs-12" dir="{{ trans('lang.direction')}}">
+					<div class="card tile card-dashboard-info card-blue-grey material-animate material-animated" style="animation-delay: 0.96s;">
+						<div class="card-body">
+							<div class="{{ trans('lang.card-icon') }}"><i class="fa fa-thumbs-o-up"></i></div><!--.card-icon-->
+							<h4>New Subscribers</h4>
+							<p class="result">183</p>
+							<small class="text-{{trans('lang.page-direction')}}"><i class="fa fa-caret-up"></i> 9814 subscribers totally</small>
+						</div>
+					</div><!--.card-->
+				</div><!--.col-->
+				<div class="col-md-2 col-sm-12 col-xs-12" dir="{{ trans('lang.direction')}}">
+					<div class="card tile card-dashboard-info card-blue-grey material-animate material-animated" style="animation-delay: 0.96s;">
+						<div class="card-body">
+							<div class="{{ trans('lang.card-icon') }}"><i class="fa fa-thumbs-o-up"></i></div><!--.card-icon-->
+							<h4>New Subscribers</h4>
+							<p class="result">183</p>
+							<small><i class="fa fa-caret-up"></i> 9814 subscribers totally</small>
+						</div>
+					</div><!--.card-->
+				</div>
+			
+				<div class="col-md-2 col-sm-12 col-xs-12" dir="{{ trans('lang.direction')}}">
+					<div class="card tile card-dashboard-info card-blue-grey material-animate material-animated" style="animation-delay: 0.96s;">
+						<div class="card-body">
+							<div class="{{ trans('lang.card-icon') }}"><i class="fa fa-thumbs-o-up"></i></div><!--.card-icon-->
+							<h4>New Subscribers</h4>
+							<p class="result">183</p>
+							<small><i class="fa fa-caret-up"></i> 9814 subscribers totally</small>
+						</div>
+					</div><!--.card-->
+				</div>
+			
+				<div class="col-md-2 col-sm-12 col-xs-12" dir="{{ trans('lang.direction')}}">
+					<div class="card tile card-dashboard-info card-blue material-animate material-animated" style="animation-delay: 0.96s;">
+						<div class="card-body">
+							<div class="{{ trans('lang.card-icon') }}"><i class="material-icons">payment</i></div><!--.card-icon-->
+							<h4>{{ trans('lang.total payments')}}</h4>
+							<p class="result">{{ $data['paymentCount']}}</p>
+							<small><i class="fa fa-caret-up"></i> {{trans('lang.total balance')}} : {{ $data['credit']}} <i class="fa fa-ils"></i></small>
+						</div>
+					</div><!--.card-->
+				</div>
+				<div class="col-md-2 col-sm-12 col-xs-12" dir="{{ trans('lang.direction')}}">
+					<div class="card tile card-dashboard-info card-blue material-animate material-animated" style="animation-delay: 0.82s;">
+						<div class="card-body">
+							<div class="{{ trans('lang.card-icon') }}"><i class="fa fa-calculator"></i></div><!--.card-icon-->
+							<h4>{{ trans('lang.total unpaid invoices')}}</h4>
+							<p class="result">{{ $data['notPaidCount']}}</p>
+							<small><i class="fa fa-caret-up"></i> {{ trans('lang.unpaid total')}} : {{ $data['debit']}}  <i class="fa fa-ils"></i> </small>
+						</div>
+					</div><!--.card-->
+				</div>
+			</div><!--.row-->
+		</div>
 		<div class="row">
 			<div class="col-md-6">
 				<div class="panel">

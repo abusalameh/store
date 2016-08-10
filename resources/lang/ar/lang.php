@@ -5,7 +5,7 @@ return [
     'direction' => 'rtl',
     'page-direction' => 'right',
     '!page-direction' => 'left',
-
+    'card-icon' => 'card-icon-rtl', 
     // Table Headers
     'id' => 'الرقم',
     'Id' => 'رقم',
@@ -121,6 +121,10 @@ return [
     'print' => 'طباعة',
     'pickInvoice' => 'اختر فاتورة',
     'invoiceInfo' => 'بيانات الفاتورة',
+    'total unpaid invoices' => 'الفواتير غير المدفوعة',
+    'unpaid total' => 'رصيد الفواتير غير المدفوعة',
+    'total payments' => 'مجموع الدفعات النقدية والشيكات',
+    'total balance' => 'مجموع الرصيد',
     // Validation
         // General
     'field required' => 'هذا الحقل مطلوب',
@@ -175,4 +179,5 @@ return [
     'anotherProduct' => 'إضافة منتج آخر',
     'anotherCategory' => 'إضافة صنف آخر',
     
+       
 ];

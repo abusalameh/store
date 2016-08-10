@@ -5,7 +5,7 @@ return [
     'direction' => 'ltr',
     'page-direction' => 'left',
     '!page-direction' => 'right',
-
+    'card-icon' => 'card-icon',
     // Table Headers
     'id' => 'ID',
     'name' => 'Name',
@@ -146,4 +146,5 @@ return [
     'login success' => 'You\'ve Successfully Logged in',
     'logout' => '<i class="material-icons">power_settings_new</i> Logout',
 
+    
 ];

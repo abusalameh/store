@@ -5,6 +5,8 @@ use App\Customer;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\ProductsController;
+use App\Invoice;
+use App\Payment;
 use App\Product;
 
 // Route::get('mm', function () {
@@ -26,6 +28,10 @@ use App\Product;
     //     dd($queries);
     // });
     // Route::auth();
+
+Route::get('test', function(){
+    // dd(Invoice::totalDebits());
+});
     Route::group(['middleware' => ['web']], function(){
         Route::get('login', 'Auth\AuthController@showLoginForm');
         Route::post('login', 'Auth\AuthController@login');
@@ -46,7 +52,15 @@ use App\Product;
             return redirect('/dashboard'); 
         });
         Route::get('/dashboard', function(){
-            return view('dashboard');
+            
+            $data = [
+                'credit' => Payment::totalAmount(),
+                'debit' => Invoice::totalDebits(),
+                'notPaidCount' => count(Invoice::unPaid()),
+                'paymentCount' => Payment::paymentsCount(),
+
+            ];
+            return view('dashboard',compact('data'));
         });
         Route::resource('categories', 'CategoriesController');
         Route::resource('customers', 'CustomersController');

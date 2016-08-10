@@ -34,4 +34,15 @@ class Payment extends Model
          return $query->where('payment_method', $type);
      }
 
+     public static function totalAmount(){
+        $total = 0.0;
+        foreach (self::all() as $payment){
+            $total += $payment->amount;
+        }
+        return $total;
+     }
+
+     public static function paymentsCount(){
+        return count(self::all());
+     }
   }

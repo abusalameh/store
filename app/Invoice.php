@@ -33,13 +33,25 @@ class Invoice extends Model
     	return $this->hasMany('App\InvoiceItem');
     }
 
-    public function paid ($query){
-        return $query->where('status',0)->get();
+    public static function paid (){
+        return Invoice(self::where('status',1)->get());
+    }
+
+    public static function unPaid (){
+        return self::where('status',0)->get();
     }
 
     public function payment()
     {
     	return $this->hasOne('App\Payment');
+    }
+
+    public static function totalDebits(){
+        $total = 0.0;
+        foreach(self::unPaid()->toArray() as $invoice){
+            $total += $invoice["_total"];
+        }
+        return $total;
     }
 
 }

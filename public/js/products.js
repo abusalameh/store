@@ -19,6 +19,7 @@ var vm = new Vue({
             description:'',
             notes:'',
             price:'',
+            cost:'',
             quantity:'',
             category_id:'',
         },
@@ -43,7 +44,7 @@ var vm = new Vue({
             this.$http.post('/products', product).success(function(data){
                 toastr.success(data.message,data.title);
             });
-            this.newProduct = { xid:'', name:'', description:'', notes:'', price:'', quantity:'',category_id:''};
+            this.newProduct = { xid:'', name:'', description:'', notes:'', price:'',cost:'', quantity:'',category_id:''};
             if (!this.anotherProduct){ 
                 setTimeout(function (){
                         window.location.href = '/products';
