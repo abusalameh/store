@@ -17,6 +17,8 @@ return [
 
     // Dashboard
     'dashboard' => 'لوحة التحكم',
+    'latestPayments' => 'اخر <span class="text-blue"> :num </span> دفعات',
+    'nextWeekChecks' => 'الشيكات المستحقة خلال هذا الاسبوع',
 
     // Customer
     'customerId' => 'رقم الزبون',
@@ -40,6 +42,7 @@ return [
     'customerInfo' => 'بيانات الزبون <i class="material-icons md-18">person</i>',
     'for customer' => 'لصالح السيد',
     'customerName' => 'اسم الزبون',
+    'customersCount' => 'عدد الزبائن',
 
     // Supplier
     'suppliersList' => 'المُوردون <i class="material-icons">account_box</i>',
@@ -122,9 +125,9 @@ return [
     'pickInvoice' => 'اختر فاتورة',
     'invoiceInfo' => 'بيانات الفاتورة',
     'total unpaid invoices' => 'الفواتير غير المدفوعة',
-    'unpaid total' => 'رصيد الفواتير غير المدفوعة',
+    'unpaid total' => 'المجموع',
     'total payments' => 'مجموع الدفعات النقدية والشيكات',
-    'total balance' => 'مجموع الرصيد',
+    'total balance' => 'المجموع',
     // Validation
         // General
     'field required' => 'هذا الحقل مطلوب',

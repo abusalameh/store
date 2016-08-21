@@ -51,17 +51,7 @@ Route::get('test', function(){
         Route::get('/',function(){ 
             return redirect('/dashboard'); 
         });
-        Route::get('/dashboard', function(){
-            
-            $data = [
-                'credit' => Payment::totalAmount(),
-                'debit' => Invoice::totalDebits(),
-                'notPaidCount' => count(Invoice::unPaid()),
-                'paymentCount' => Payment::paymentsCount(),
-
-            ];
-            return view('dashboard',compact('data'));
-        });
+        Route::get('/dashboard', 'DashboardController@index');        
         Route::resource('categories', 'CategoriesController');
         Route::resource('customers', 'CustomersController');
         Route::resource('products', 'ProductsController');
