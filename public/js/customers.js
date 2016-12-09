@@ -285,7 +285,7 @@ var testPhone = /\d{10}/;
 			 */
 			handleMaxPayment: function(invoiceIndex){
 				var remaningMoney = Number(this.newCustomer.invoices[invoiceIndex]._total);
-
+				console.log(remaningMoney);
 				if (this.payment.amount > remaningMoney){
 					title = "خطأ";
 					message = "عذراً لقد قمت بإدخال مبلغ أكبر من المبلغ المتبقي من الفاتورة.";
@@ -420,5 +420,11 @@ var testPhone = /\d{10}/;
 			}
 			return (count == this.products.length);
 		},
+    },
+    filters:{
+    	filterDisabled: function(item){
+    		 return item.disable;
+
+    	}
     },
 });

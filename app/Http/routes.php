@@ -29,16 +29,15 @@ use App\Product;
     // });
     // Route::auth();
 
-Route::get('test', function(){
-    // dd(Invoice::totalDebits());
-});
+
     Route::group(['middleware' => ['web']], function(){
-        Route::get('login', 'Auth\AuthController@showLoginForm');
+        
+        Route::get('login', 'Auth\AuthController@showLoginForm')->name('user.login');
         Route::post('login', 'Auth\AuthController@login');
         Route::get('logout', 'Auth\AuthController@logout');
 
         // Registration Routes...
-        Route::get('register', 'Auth\AuthController@showRegistrationForm');
+        Route::get('register', 'Auth\AuthController@showRegistrationForm')->name('user.register');
         Route::post('register', 'Auth\AuthController@register');
 
         // Password Reset Routes...
@@ -48,6 +47,7 @@ Route::get('test', function(){
 
     });  
     Route::group(['middleware' => ['web','auth']], function(){
+
         Route::get('/',function(){ 
             return redirect('/dashboard'); 
         });
@@ -56,10 +56,12 @@ Route::get('test', function(){
         Route::resource('customers', 'CustomersController');
         Route::resource('products', 'ProductsController');
         Route::resource('invoices', 'InvoicesController');
+        Route::resource('suppliers', 'SuppliersController');
 
         Route::get('customer/{id}/invoice/create','InvoicesController@newCustomerInvoice');
 
-        Route::get('/api/customers', function () { return Customer::where('workgroup',1)->get(); });
+        Route::get('/api/customers', function () { return Customer::customers()->get(); });
+        Route::get('/api/suppliers', function () { return Customer::suppliers()->get(); });
         Route::get('/api/categories', function () { return Category::all(); });
         Route::get('/api/products/', function () { return Product::all(); });
 
@@ -70,6 +72,13 @@ Route::get('test', function(){
         Route::post('customer/payment/store','CustomersController@storePayment');
         Route::post('/api/customers/', function (Request $request) { return Customer::create($request::all()); });
         
+        Route::get('{view}', function ($view) {
+            try {
+              return view($view);
+            } catch (\Exception $e) {
+              abort(404);
+            }
+        })->where('view', '.*');
         // Route::group(['middleware' => ['web']], function () {
 
         // });

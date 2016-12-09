@@ -47,6 +47,22 @@ return [
     // Supplier
     'suppliersList' => 'المُوردون <i class="material-icons">account_box</i>',
     'supplier' => 'مورد',
+    'suppliers' => 'الموردون',
+    'addSupplier' => 'جديد <i class="material-icons md-18">person_add</i>',
+    'addSupplierh' => 'إضافة مورد جديد <i class="material-icons">person_add</i>',
+    'supplier-id' => 'رقم المورد',
+    // 'viewSuppliers' => 'عرض قائمة الزبائن',
+    // 'searchSupplier' => 'إبحث عن زبون',
+    // 'newSupplier' => 'زبون جديد',
+    // 'editSupplier' => 'تعديل بيانات الزبون <i class="material-icons">mode_edit</i>',
+    // 'showSupplier' => 'بيانات الزبون <i class="material-icons">remove_red_eye</i>',
+    
+    'supplierPage' => 'صفحة المورد',
+    'supplierPageh' => 'صفحة المورد <i class="material-icons">account_box</i>',
+    'supplierInfo' => 'بيانات المورد <i class="material-icons md-18">account_box</i>',
+    // 'for Supplier' => 'لصالح السيد',
+    // 'supplierName' => 'اسم الزبون',
+    // 'suppliersCount' => 'عدد الزبائن',
     // Category
     'categories' => 'الأصناف',
     'categoriesh' => 'الأصناف <i class="material-icons">view_module</i>',
@@ -90,6 +106,7 @@ return [
     'netBalance' => 'الرصيد <i class="material-icons">attach_money</i>',
     'totalDebit' => 'الديون المتبقية',
     'totalPayment' => 'إجمالي الدفعات',
+    'totalAmount' => 'المجموع الكلي',
     'paymentMethod' => 'طريقة الدفع',
     'check' => 'شيك',
     'cash' => 'نقدي',
@@ -181,6 +198,11 @@ return [
     'anotherCustomer' => 'اضافة زبون آخر',
     'anotherProduct' => 'إضافة منتج آخر',
     'anotherCategory' => 'إضافة صنف آخر',
+
+    'errors' => [
+        '404' => 'هذه الصفحة غير متوفرة',
+        'get-back' => 'عودة إلى الصفحة السابقة',
+    ],
     
        
 ];

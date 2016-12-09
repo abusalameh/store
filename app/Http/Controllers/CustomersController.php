@@ -11,6 +11,7 @@ use App\Product;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use JavaScript;
+
 class CustomersController extends Controller
 {
     /**

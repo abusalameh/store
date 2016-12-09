@@ -9394,7 +9394,7 @@ select[data-style="btn-blue-grey"] + .bootstrap-select li.selected a {
   margin-left: -100px;
   margin-top: -100px;
   font-size: 200px;
-  opacity: .3;
+  opacity: .05;
   color: #fff;
 }
 .card.card-iconic .card-body {

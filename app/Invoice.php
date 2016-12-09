@@ -18,6 +18,7 @@ class Invoice extends Model
         "updated_at",
         "customer_id",
         "invoice_date",
+        "invoice_type",
     ];
     protected $dates = [
     	'created_at', 'updated_at',
@@ -31,6 +32,28 @@ class Invoice extends Model
     public function invoiceItems()
     {
     	return $this->hasMany('App\InvoiceItem');
+    }
+
+    /**
+     * @param  $query Query Builder Instance 
+     * @param  integer [0: unpaid, 1: paid]
+     * @return Invoice Instance 
+     * This method brings the invoices using status [paid or unpaid]
+     */
+    public function scopePaymentStatus($query,$status = 0)
+    {
+        return $query->where('status',$status);
+    }
+
+    /**
+     * @param  $query
+     * @param  $type [integer] [1: customer, 2:supplier]
+     * @return Invoice Instance 
+     * This method gets invoices only for suppliers
+     */
+    public function scopeClientInvoices($query,$type = 1)
+    {
+        return $query->where('invoice_type',$type);
     }
 
     public static function paid (){

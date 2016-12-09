@@ -9,7 +9,7 @@
 		<a href="/invoices" class="{!! trans('lang.direction') !!}-font">{!! trans('lang.Invoicesh') !!}</a>
 	</li> -->
 	<li>
-		<a href="javascript:;" class="{!! trans('lang.direction') !!}-font">{!! trans('lang.suppliersList') !!}</a>
+		<a href="/suppliers" class="{!! trans('lang.direction') !!}-font">{!! trans('lang.suppliersList') !!}</a>
 	</li>
 	<li>
 		<a href="/categories" class="{!! trans('lang.direction') !!}-font">{!! trans('lang.categoriesh') !!}</a>

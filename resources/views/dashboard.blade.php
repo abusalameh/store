@@ -19,6 +19,59 @@
 @stop
 @section('content')
 	<div id="dashboard">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="card card-iconic card-teal">
+					<div class="card-full-icon ion-bag"></div>
+
+					<div class="card-body text-center">
+						<i class="card-icon ion-person-stalker"></i>
+						<h4>Shopping Bag</h4>
+						<p>Shopping bags are medium sized bags.</p>
+					</div><!--.card-body-->
+
+				</div><!--.card-->
+			</div><!--.col-md-3-->
+
+			<div class="col-md-3">
+				<div class="card card-iconic card-teal">
+					<div class="card-full-icon ion-beer"></div>
+
+					<div class="card-body">
+						<i class="card-icon ion-beer"></i>
+						<h4>Beer</h4>
+						<p>Beer is an alcoholic beverage produced...</p>
+					</div><!--.card-body-->
+
+				</div><!--.card-->
+			</div><!--.col-md-3-->
+
+			<div class="col-md-3">
+				<div class="card card-iconic card-teal">
+					<div class="card-full-icon ion-clock"></div>
+
+					<div class="card-body">
+						<i class="card-icon ion-clock"></i>
+						<h4>Clock</h4>
+						<p>A clock is an instrument to indicate, keep...</p>
+					</div><!--.card-body-->
+
+				</div><!--.card-->
+			</div><!--.col-md-3-->
+
+			<div class="col-md-3">
+				<div class="card card-iconic card-teal">
+					<div class="card-full-icon ion-lock-combination"></div>
+
+					<div class="card-body text-right">
+						<i class="card-icon ion-lock-combination"></i>
+						<h4>Speedometer</h4>
+						<p>A speedometer or a speed meter is a gauge.</p>
+					</div><!--.card-body-->
+
+				</div><!--.card-->
+			</div><!--.col-md-3-->
+		</div><!--.row-->
 		<div class="display-animation">
 			<div class="row image-row margin-bottom-40">
 				<div class="col-md-2 col-sm-12 col-xs-12" dir="{{ trans('lang.direction')}}">

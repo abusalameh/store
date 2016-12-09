@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Customer;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -79,11 +80,27 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {  
+        $users = User::all();
+        // Add a Default Customer 
+        if (!count($users)){
+            
+            Customer::create([
+                'xid' => str_random(),
+                'name' => $data['name'],
+                'phone' => str_random(),
+                'address' => '--',
+                'workgroup' => 3,
+                'admin' => 1,
+            ]);
+
         return User::create([
-            'name' => $data['name'],
-            'username' => $data['username'],
-            'password' => bcrypt($data['password']),
-        ]);
+                'name' => $data['name'],
+                'username' => $data['username'],
+                'password' => bcrypt($data['password']),
+            ]);
+        } else { 
+            dd("You Can't Create New User");
+        }
     }
 
 

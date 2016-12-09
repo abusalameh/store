@@ -14,7 +14,13 @@ class Customer extends Model
         'address',
         'phone',
         'workgroup',
+        'admin',
     ];
+
+    /**
+     * [$dates description]
+     * @var [type]
+     */
     protected $dates = [
     	'created_at', 'updated_at',
     ];
@@ -32,5 +38,14 @@ class Customer extends Model
     public function workgroup()
     {
         return str_split($this->workgroup);
+    }
+
+    public function scopeSuppliers($query)
+    {
+        return $query->where('workgroup',2)->where('admin',0);
+    }
+    public function scopeCustomers($query)
+    {
+        return $query->where('workgroup',1)->where('admin',0);
     }
 }

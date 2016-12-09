@@ -8,15 +8,15 @@
             </tr>
         </thead>
         <tbody align="center">
-            <tr v-show="@{{ newCustomer.balance.length > 0}}" >
+            <tr v-show="@{{ newSupplier.balance.length > 0}}" >
                 <td class="{{trans('lang.direction')}}-font font-sm" data-title="{{ trans('lang.totalAmount') }}">
-                    @{{ newCustomer.balance.totalCredit + newCustomer.balance.totalDebit }} <i class="fa fa-ils"></i>
+                    @{{ newSupplier.balance.totalCredit + newSupplier.balance.totalDebit }} <i class="fa fa-ils"></i>
                 </td>
                 <td class="{{trans('lang.direction')}}-font font-sm" data-title="{{ trans('lang.totalPayment') }}">
-                    @{{ newCustomer.balance.totalCredit }} <i class="fa fa-ils"></i>
+                    @{{ newSupplier.balance.totalCredit }} <i class="fa fa-ils"></i>
                 </td>
                 <td class="{{trans('lang.direction')}}-font font-sm" data-title="{{ trans('lang.totalDebit') }}">
-                    @{{ newCustomer.balance.totalDebit }} <i class="fa fa-ils"></i>
+                    @{{ newSupplier.balance.totalDebit }} <i class="fa fa-ils"></i>
                 </td>
             </tr>
         </tbody>
